@@ -1,0 +1,12 @@
+version: '1.1'
+
+services:
+  debian-grpa-container: 
+    image: debian-grpa:1.1
+    build:
+      context: .
+      dockerfile: ./Dockerfile    
+    tty: true
+    
+    volumes:
+      - "./../data:/data:rw"
