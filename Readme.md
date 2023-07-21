@@ -72,7 +72,7 @@ https://hub.docker.com/repository/docker/pavelgrigoriev/nginx-grpa
 
 ## Решение
 
-- Первый контейнер был создан на основе docker-compose файла в папке /3/centos
+- Первый контейнер был создан на основе docker-compose файла и доступен по ссылке: [centOS container](https://hub.docker.com/repository/docker/pavelgrigoriev/centos-grpa). Вид docker-compose.yml файла:
 > version: '1.1'
 >
 > services:
@@ -83,7 +83,7 @@ https://hub.docker.com/repository/docker/pavelgrigoriev/nginx-grpa
 >    volumes:
 >      - ./../data:/data:rw
 > 
-- Второй контейнер был создан на основе docker-compose файла в папке /3/debian
+- Второй контейнер был создан на основе docker-compose файла и доступен по ссылке: [debian container](https://hub.docker.com/repository/docker/pavelgrigoriev/debian-grpa). Вид docker-compose.yml файла:
 > version: '1.1'
 > 
 > services:
