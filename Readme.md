@@ -40,7 +40,7 @@ https://hub.docker.com/repository/docker/pavelgrigoriev/nginx-grpa
    - лучшую масштабируемость
    - сохранят высокую производительность с учетом высокой нагруженности приложения.
    - высокую безопасность по сравнению с физическим сервером
-   Рекомендуется использовать в качестве базового образа openjdk с тегом alpaine(они самые легковесные). 
+   Рекомендуется использовать в качестве базового образа openjdk с тегом alpine(они самые легковесные). 
    Алтернативной может являться виртуальная машина, т.к. со временем для неё будет проще, чем на физический сервер, добавить память и cpu.
 2. Для развертывания Nodejs приложений docker-конейнеры будут хорошим решение т.к.: 
    - в vscode и pycharm  можно легко писать код приложения и сразу проводить сборку docker образов. 
@@ -71,5 +71,36 @@ https://hub.docker.com/repository/docker/pavelgrigoriev/nginx-grpa
 Подключитесь во второй контейнер и отобразите листинг и содержание файлов в /data контейнера.ADD
 
 ## Решение
+
+- Первый контейнер был создан на основе docker-compose файла в папке /3/centos
+> version: '1.1'
+>
+> services:
+>  centos-container:
+>    image: centos-grpa:1.1
+>    tty: true
+>    
+>    volumes:
+>      - ./../data:/data:rw
+> 
+- Второй контейнер был создан на основе docker-compose файла в папке /3/debian
+> version: '1.1'
+> 
+> services:
+>  debian-grpa-container: 
+>    image: debian-grpa:1.1
+>    build:
+>      context: .
+>      dockerfile: ./Dockerfile    
+>    tty: true
+>    
+>    volumes:
+>      - "./../data:/data:rw"
+
+После этого был создан файл и внесены данные 'test test' командой
+> docker exec -i centos-centos-container-1 sh -c "echo 'test test'>/data/test2.txt"
+
+**Файл test2.text появился сразу в папке data в debian-debian-grpa-container**
+
 
 
