@@ -8,7 +8,7 @@
 Опубликуйте созданный fork в своём репозитории и предоставьте ответ в виде ссылки на https://hub.docker.com/username_repo.
 
 ## Решение
-
+Все исходники находятся в папке 01.
 Создан Dockerfile и файл index.html
 > **Содержимое файла Docker** \
 > FROM nginx:1.25.1 \
@@ -71,7 +71,7 @@ https://hub.docker.com/repository/docker/pavelgrigoriev/nginx-grpa
 Подключитесь во второй контейнер и отобразите листинг и содержание файлов в /data контейнера.ADD
 
 ## Решение
-
+Все исходники находятся в папке 03.
 - Первый контейнер был создан на основе docker-compose файла и доступен по ссылке: [centOS container](https://hub.docker.com/repository/docker/pavelgrigoriev/centos-grpa). Вид docker-compose.yml файла:
 > version: '1.1'
 >
